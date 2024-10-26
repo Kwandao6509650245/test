@@ -5,6 +5,7 @@ To set up the testing environment, make sure you have Yarn installed. Then, inst
 
 ```bash
 yarn 
+```
 
 ## Running Tests
 ...
