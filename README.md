@@ -1,7 +1,11 @@
 ## Unit and Integration Testing Overview
 ...
 ## Setting Up Tests
-...
+To set up the testing environment, make sure you have Yarn installed. Then, install the required packages by running:
+
+```bash
+yarn 
+
 ## Running Tests
 ...
 ## Test File Structure
