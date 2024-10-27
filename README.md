@@ -14,23 +14,23 @@ yarn
 ## Running Tests
 ...
 ## Test File Structure
-all of Test File will be in src/__test__
-src/
-  ├── __mocks__/
-  │   ├── styleMock.js               
-  │   ├── integration/
-  │   │   └── PetIntegration.test.js  # Verifies interactions between multiple API components
-  │   ├── unit/
-  │   │   ├── CreatePetEntry.test.js  # Tests functionality for creating a pet entry
-  │   │   └── EditPetEntry.test.js    # Tests functionality for editing a pet entry
-  ├── component/                      # Contains all UI components
-  ├── contexts/                       # Manages global context and state for the app
-  ├── main/                           # Main app configuration and initialization
-  ├── app.js                          # Primary application component
-  ├── app.css                         # Styles specific to the main app component
-  ├── http.js                         # HTTP configurations and API handlers
-  ├── index.js                        # Entry point of the app
-  └── index.css                       # Global CSS styles
+all of Test File will be in src/__test__ <br>
+src/ <br>
+  ├── __mocks__/              <br>
+  │   ├── styleMock.js               <br>
+  │   ├── integration/ 								<br>
+  │   │   └── PetIntegration.test.js                <br>
+  │   ├── unit/              <br>
+  │   │   ├── CreatePetEntry.test.js                <br>
+  │   │   └── EditPetEntry.test.js                  <br>
+  ├── component/                                    <br>
+  ├── contexts/               <br>                      
+  ├── main/                                   <br>      
+  ├── app.js                              <br>          
+  ├── app.css                                       <br>
+  ├── http.js                                    <br>   
+  ├── index.js                                     <br> 
+  └── index.css                                    <br>
 
 
 ## Test Coverage
