@@ -18,22 +18,23 @@ all of Test File will be in src/__test__
 
 src/
 
-
-  ├── __mocks__/                
-  │   ├── styleMock.js               <br>
-  │   ├── integration/ 								<br>
-  │   │   └── PetIntegration.test.js                <br>
-  │   ├── unit/              <br>
-  │   │   ├── CreatePetEntry.test.js                <br>
-  │   │   └── EditPetEntry.test.js                  <br>
-  ├── component/                                    <br>
-  ├── contexts/               <br>                      
-  ├── main/                                   <br>      
-  ├── app.js                              <br>          
-  ├── app.css                                       <br>
-  ├── http.js                                    <br>   
-  ├── index.js                                     <br> 
-  └── index.css                                    <br>
+  ├── __mocks__/       
+         
+  │   ├── styleMock.js         
+      
+  │   ├── integration/ 								
+  │   │   └── PetIntegration.test.js                
+  │   ├── unit/              
+  │   │   ├── CreatePetEntry.test.js                
+  │   │   └── EditPetEntry.test.js                  
+  ├── component/                                    
+  ├── contexts/              
+  ├── main/                                  
+  ├── app.js                              
+  ├── app.css                                       
+  ├── http.js                                    
+  ├── index.js                                     
+  └── index.css                                    
 
 
 ## Test Coverage
