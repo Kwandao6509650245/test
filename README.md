@@ -14,9 +14,9 @@ yarn
 ## Running Tests
 ...
 ## Test File Structure
-all of Test File will be in src/__test__ <br>
-src/ <br>
-  ├── __mocks__/              <br>
+all of Test File will be in src/__test__. 
+src/. 
+  ├── __mocks__/                
   │   ├── styleMock.js               <br>
   │   ├── integration/ 								<br>
   │   │   └── PetIntegration.test.js                <br>
