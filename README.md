@@ -11,10 +11,23 @@ Our team uses the following tools for testing :
 ```bash
 yarn 
 ```
-- 
+- The CI pipeline automatically runs whenever code is updated (through push or pull requests) and follows these steps:
+
+	1.	Code Checkout: GitHub Actions uses the actions/checkout@v4 action to pull the latest code from the repository onto the runner (the virtual environment where the CI runs).
+2.	Set Up Environment: The CI pipeline sets up the runtime environment, like OS and Node.js version, based on the configuration in the .yml file. This can include environments like ubuntu, macOS, windows, or different versions of Node.js.
+	3.	Install Dependencies: The pipeline uses commands like npm ci (or similar) to install the project dependencies specified, ensuring a stable environment and minimizing issues due to missing packages.
+	4.	Run Automated Tests: It runs the test suite using a command such as npm test and sets up necessary environment variables from secrets to ensure tests run correctly.
 
 ## Running Tests
-...
+Running Tests Locally: Before pushing code, you can run tests locally with these commands:
+
+```bash
+npm test
+```
+CI Pipeline Process:
+1.	Every time there’s a push or pull request to any branch (indicated by '*' in the .yml file), the pipeline triggers automatically.
+	2.	GitHub Actions starts running the Run-Test-Suite job, following each step in sequence: checking out code, setting up the environment, installing dependencies, and running the test suite.
+	3.	The matrix strategy makes the pipeline test the code across multiple OS and Node.js versions, as specified, to confirm compatibility across all environments.
 ## Test File Structure
 The Unit Test files in this project are stored in the src/__test__ folder :
 
