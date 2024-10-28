@@ -14,7 +14,7 @@ yarn
 ## Running Tests
 ...
 ## Test File Structure
-The Unit Test files in this project are stored in the src/__test__ folder, with each file created to test specific system functionality. Here’s an overview:
+The Unit Test files in this project are stored in the src/__test__ folder :
 
 CreatePetEntry.test.js 
 - Handle input changes form Create Pet Entry
@@ -25,10 +25,7 @@ EditPetEntry.test.js
 - Calls updatePet on button click with correct data
 - Should not have the same values as initial mock repo after editing 
 Petintegration.test.js
-
-To view the test results, run the following command in the terminal:
-
-npm test
+- 
 
 ## Test Coverage
 This repository includes thorough test coverage across two key areas:
@@ -38,6 +35,8 @@ Unit Testing: Focuses on individual functions or modules to confirm they work as
 Integration Testing: Verifies that different parts of the API interact correctly. By testing how modules work together, integration testing ensures data flows smoothly between components, helping to catch issues that might only appear when components are combined.
 
 ## Viewing Test Results 
+- In CI pipeline: Access test results via GitHub Actions by navigating to the Actions tab.
+- Locally: Test results display in the terminal, including a summary of passed/failed tests and any errors encountered.
 to viewing Test Results by following this command :
 ```bash
 npm test
