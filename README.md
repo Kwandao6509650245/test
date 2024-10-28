@@ -14,28 +14,21 @@ yarn
 ## Running Tests
 ...
 ## Test File Structure
-all of Test File will be in src/__test__
+The Unit Test files in this project are stored in the src/__test__ folder, with each file created to test specific system functionality. Here’s an overview:
 
-src/
+CreatePetEntry.test.js 
+- Handle input changes form Create Pet Entry
+- Calls createNewPet on button click with correct data
+- Does not call createNewPet if required fields are not filled
+EditPetEntry.test.js
+- Handle input changes form Edit Pet Entry
+- Calls updatePet on button click with correct data
+- Should not have the same values as initial mock repo after editing 
+Petintegration.test.js
 
-  ├── __mocks__/       
-         
-  │   ├── styleMock.js         
-      
-  │   ├── integration/ 								
-  │   │   └── PetIntegration.test.js                
-  │   ├── unit/              
-  │   │   ├── CreatePetEntry.test.js                
-  │   │   └── EditPetEntry.test.js                  
-  ├── component/                                    
-  ├── contexts/              
-  ├── main/                                  
-  ├── app.js                              
-  ├── app.css                                       
-  ├── http.js                                    
-  ├── index.js                                     
-  └── index.css                                    
+To view the test results, run the following command in the terminal:
 
+npm test
 
 ## Test Coverage
 This repository includes thorough test coverage across two key areas:
