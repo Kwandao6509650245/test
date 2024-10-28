@@ -47,8 +47,9 @@ CI Pipeline Process:
 1.	Every time there’s a push or pull request to any branch (indicated by '*' in the .yml file), the pipeline triggers automatically.
 	2.	GitHub Actions starts running the Run-Test-Suite job, following each step in sequence: checking out code, setting up the environment, installing dependencies, and running the test suite.
 	3.	The matrix strategy makes the pipeline test the code across multiple OS and Node.js versions, as specified, to confirm compatibility across all environments.
+
 ## Test File Structure
-The Unit Test files in this project are stored in the src/__test__ folder :
+The Unit Test and Integration test files in this project are stored in the src/__test__ folder :
 
 CreatePetEntry.test.js 
 - Handle input changes form Create Pet Entry
@@ -67,6 +68,7 @@ Petintegration.test.js
 - Delete a Pet Entry: Tests DELETE /api/pets/:id to ensure a pet entry is deleted properly.
 - Handle Non-Existing Pet Requests: Checks PUT and GET requests for non-existing pet IDs, ensuring proper error responses.
 
+.yml file that use for Github action is storge in .github/workflow/
 ## Test Coverage
 This repository includes thorough test coverage across two key areas:
 
