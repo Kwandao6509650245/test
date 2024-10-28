@@ -40,7 +40,13 @@ EditPetEntry.test.js
 - Calls updatePet on button click with correct data
 - Should not have the same values as initial mock repo after editing 
 Petintegration.test.js
-- 
+- Create a New Pet Entry: Tests POST /api/pets to create a new entry and checks the created data.
+- Update a Pet Entry: Tests PUT /api/pets/:id to update an existing pet’s data.
+- Retrieve All Pets: Tests GET /api/pets to retrieve all pet entries.
+- Handle Missing Fields: Tests POST /api/pets with missing data to check for error handling.
+- Retrieve a Pet by ID: Tests GET /api/pets/:id to fetch a specific pet.
+- Delete a Pet Entry: Tests DELETE /api/pets/:id to ensure a pet entry is deleted properly.
+- Handle Non-Existing Pet Requests: Checks PUT and GET requests for non-existing pet IDs, ensuring proper error responses.
 
 ## Test Coverage
 This repository includes thorough test coverage across two key areas:
@@ -50,12 +56,40 @@ Unit Testing: Focuses on individual functions or modules to confirm they work as
 Integration Testing: Verifies that different parts of the API interact correctly. By testing how modules work together, integration testing ensures data flows smoothly between components, helping to catch issues that might only appear when components are combined.
 
 ## Viewing Test Results 
-- In CI pipeline: Access test results via GitHub Actions by navigating to the Actions tab.
-- Locally: Test results display in the terminal, including a summary of passed/failed tests and any errors encountered.
-to viewing Test Results by following this command :
+You can view test results in the CI pipeline both on GitHub and in your terminal when running tests locally. Here’s how:
+
+	1.	View Test Results in GitHub Actions:
+	1.	Go to the Repository on GitHub:
+	•	Navigate to your project repository where the CI pipeline is set up.
+	2.	Access the “Actions” Tab:
+	•	In this tab, you’ll see all triggered workflows, such as from pushes or pull requests.
+	•	The latest workflow appears at the top with statuses like ✔️ success, ❌ failure, or ⏳ in progress.
+	3.	Select the Workflow:
+	•	Click on the workflow to see its details. This opens a page showing each job created from the .yml file (e.g., build).
+	4.	View the Job Log:
+	•	Click on the job (e.g., build) to check logs for each step.
+	•	Logs show details for steps like dependency installation, test execution, and any errors or failures.
+	5.	Notifications and Test Reports:
+	•	If a test fails, GitHub Actions provides error details, showing which assertions did not pass.
+	
+2.	View Test Results in Terminal (Local Testing):
+	1.	Run Tests Locally:
+	•	Run tests with the command:
+
 ```bash
 npm test
 ```
+
+	•	Results will appear in the terminal in real-time.
+
+	2.	Test Results:
+	•	The terminal shows detailed results, including:
+	•	Number of tests passed and failed
+	•	Time taken per test
+	•	Error details for any failed assertions
+	3.	Summary:
+	•	At the end, the terminal provides a summary, such as Tests: 10 passed, 2 failed, giving an overview of the test outcomes.
+
 
 ## Adding New Tests
  ...
