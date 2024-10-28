@@ -1,15 +1,17 @@
 ## Unit and Integration Testing Overview
 Our team uses the following tools for testing :
-- **Jest**: For unit testing.
-- **Supertest**: For integration testing.
-- **Babel**: For transpiling ES6+ JavaScript code to ensure compatibility with Jest.
-  
+- Jest: Used for unit testing individual functions or modules, ensuring that each component works as expected in isolation.
+- Supertest: Handles integration testing, focusing on how different parts of the application interact, especially useful for testing API endpoints.
+- Babel: Transpiles ES6+ JavaScript code to ensure compatibility with Jest, allowing the use of modern JavaScript features in tests.
+- GitHub Actions: Automates testing in CI/CD. Each push and pull request triggers the GitHub Actions workflow, running our test suite in various environments (e.g., macos-latest, ubuntu-24.04). This setup ensures consistent test results across platforms, and notifies us immediately if any tests fail, providing valuable feedback on code quality before merging.
+
 ## Setting Up Tests
-To set up the testing environment, make sure you have Yarn installed. Then, install the required packages by running :
+- To set up the testing environment, make sure you have Yarn installed. Then, install the required packages by running :
 
 ```bash
 yarn 
 ```
+- 
 
 ## Running Tests
 ...
