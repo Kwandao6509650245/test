@@ -13,10 +13,29 @@ yarn
 ```
 - The CI pipeline automatically runs whenever code is updated (through push or pull requests) and follows these steps:
 
-	1.	Code Checkout: GitHub Actions uses the actions/checkout@v4 action to pull the latest code from the repository onto the runner (the virtual environment where the CI runs).
-2.	Set Up Environment: The CI pipeline sets up the runtime environment, like OS and Node.js version, based on the configuration in the .yml file. This can include environments like ubuntu, macOS, windows, or different versions of Node.js.
-	3.	Install Dependencies: The pipeline uses commands like npm ci (or similar) to install the project dependencies specified, ensuring a stable environment and minimizing issues due to missing packages.
-	4.	Run Automated Tests: It runs the test suite using a command such as npm test and sets up necessary environment variables from secrets to ensure tests run correctly.
+	1.	Trigger (on:)
+	•	The pipeline automatically runs on any push or pull_request event to any branch ('*'). This ensures the workflow is triggered for all updates across branches.
+	2.	Job Setup (Run-Test-Suite)
+	•	The job is configured to run on different operating systems using matrix strategy (ubuntu-24.04, windows-latest, macos-latest), ensuring compatibility across environments.
+	•	Different Node.js versions (16.x, 22.x, and node) are also tested, which ensures the code runs smoothly on multiple versions of Node.js.
+	3.	Steps:
+	•	System Information:
+	•	echo "This job is now running on a ${{ matrix.os }}" outputs the OS currently in use for easier debugging and identification.
+	•	Displays the branch name and repository using echo, showing contextual information for the test.
+	•	Checkout Code:
+	•	Uses actions/checkout@v4 to pull the latest code from the repository into the runner environment, ensuring the job has the most recent code.
+	•	Setup Node.js:
+	•	Installs Node.js on the runner according to the specified matrix.node-version. The cache: 'npm' option is used to save previously downloaded packages and speed up future runs.
+	•	List Repository Files:
+	•	Lists all files in the repository with ls, helping confirm that the code is available and accessible for subsequent steps.
+	•	Install Dependencies:
+	•	Runs npm ci to install all project dependencies as specified in package-lock.json, ensuring consistent dependency versions.
+	•	Run Test Suite:
+	•	Runs npm test to execute the automated tests.
+	•	The environment variables (APP_KEYS, API_TOKEN_SALT, ADMIN_JWT_SECRET, TRANSFER_TOKEN_SALT, JWT_SECRET) are set using GitHub secrets, securely providing necessary values for tests.
+	•	If tests fail, an error is logged specifying which tests failed on each OS and Node.js version.
+	•	Display Job Status:
+	•	Logs the job’s final status (e.g., success or failure) using echo, providing a summary of the job outcome for easier troubleshooting.
 
 ## Running Tests
 Running Tests Locally: Before pushing code, you can run tests locally with these commands:
